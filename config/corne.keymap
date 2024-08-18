@@ -6,7 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 &soft_off { hold-time-ms = <0>; };
@@ -20,9 +19,9 @@
             key-positions = <16 15>;
         };
 
-        poweroff {
-            bindings = <&ext_power EP_OFF>;
-            key-positions = <25 36>;
+        softoff {
+            bindings = <&soft_off>;
+            key-positions = <36 25>;
         };
     };
 
