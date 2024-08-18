@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
+&soft_off { hold-time-ms = <0>; };
+
 / {
     combos {
         compatible = "zmk,combos";
