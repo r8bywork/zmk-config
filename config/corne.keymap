@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -15,6 +16,11 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <16 15>;
+        };
+
+        poweroff {
+            bindings = <&ext_power EP_OFF>;
+            key-positions = <25 36>;
         };
     };
 
