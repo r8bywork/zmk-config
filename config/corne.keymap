@@ -58,6 +58,14 @@
         tapping-term-ms = <250>;
         bindings = <&kp F9>, <&kp F7>;
       };
+
+      td_star_hash: td_star_hash {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_STAR_HASH";
+        #binding-cells = <0>;
+        bindings = <&kp ASTERISK>, <&kp HASH>;
+        tapping-term-ms = <260>;
+       };
     };
 
     keymap {
