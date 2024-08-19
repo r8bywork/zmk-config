@@ -35,14 +35,14 @@
         mcr_ctrl_c: ctrl_c {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp C>;
+            bindings = <&kp LG(C)>;
             label = "CTRL_C";
         };
 
         mcr_ctrl_v: ctrl_v {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp V>;
+            bindings = <&kp LG(V)>;
             label = "CTRL_V";
         };
 
@@ -51,6 +51,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_CONTROL &kp SPACE>;
             label = "SWITCH_LANGUAGE";
+        };
+
+        mcr_ctrl_z: mcr_ctrl_z {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(Z)>;
+            label = "MCR_CTRL_Z";
         };
     };
 
@@ -146,10 +153,10 @@
 
         media_func_layer {
             bindings = <
-&none  &none    &kp F10  &kp F11              &kp F12  &none          &none  &none           &none           &none            &none  &none
-&none  &kp F5   &kp F8   &td_next_prev_track  &kp F3   &mcr_ctrl_v    &none  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &none  &none
-&none  &kp F24  &kp F1   &kp F2               &none    &mcr_ctrl_c    &none  &none           &kp DOWN_ARROW  &none            &none  &trans
-                         &trans               &none    &none          &none  &none
+&none  &none  &none  &none        &none        &none          &none  &none           &kp UP_ARROW    &none            &none  &none
+&none  &none  &none  &none        &none        &none          &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
+&none  &none  &none  &mcr_ctrl_z  &mcr_ctrl_c  &mcr_ctrl_v    &none  &none           &none           &none            &none  &trans
+                     &trans       &none        &none          &none  &none
             >;
         };
     };
