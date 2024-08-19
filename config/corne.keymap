@@ -93,6 +93,11 @@
             bindings = <&kp ESC>;
             key-positions = <20 19>;
         };
+
+        caps_lock {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <2 3 4>;
+        };
     };
 
     behaviors {
