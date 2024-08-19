@@ -49,6 +49,17 @@
         };
     };
 
+
+    behaviors {
+      td_next_prev_track: td_next_prev_track {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD_NEXT_PREV_TRACK";
+        #binding-cells = <0>;
+        tapping-term-ms = <250>;
+        bindings = <&kp F9>, <&kp F7>;
+      };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
