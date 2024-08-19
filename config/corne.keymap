@@ -64,6 +64,16 @@
 
             tapping-term-ms = <260>;
         };
+
+        skl: sticky_key_long_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_LONG_RELEASE";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <5000>;
+            ignore-modifiers;
+            quick-release;
+        };
     };
 
     keymap {
