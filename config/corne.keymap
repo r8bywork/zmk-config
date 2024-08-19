@@ -88,7 +88,7 @@
         };
 
         ctrl_v {
-            bindings = <&mcr_ctrl_c>;
+            bindings = <&mcr_ctrl_v>;
             key-positions = <28 29>;
         };
 
@@ -99,7 +99,7 @@
 
         switch_language {
             bindings = <&mcr_switch_language>;
-            key-positions = <38 39>;
+            key-positions = <31 30>;
         };
     };
 
