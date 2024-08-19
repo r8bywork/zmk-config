@@ -8,9 +8,33 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&soft_off { hold-time-ms = <0>; };
+&soft_off { hold-time-ms = <200>; };
 
 / {
+    macros {
+      mcr_arr_fn: macro_arrow_fn {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp EQUAL &kp GT &kp SPACE &kp LEFT_BRACE &kp RET>;
+          label = "MACRO_ARROW_FN";
+      };
+
+
+      mcr_comma_space_cyr: mcr_comma_space {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp CARET &kp SPACE>;
+          label = "MCR_COMMA_SPACE";
+      };
+
+      mcr_dot_space_cyr: mcr_dot_space {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp AMPERSAND &kp SPACE &skl LEFT_SHIFT>;
+          label = "MCR_DOT_SPACE";
+      };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -43,20 +67,30 @@
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
 
+        num_char_layer {
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&none   &kp MINUS   &kp N1  &kp N2  &kp N3              &kp SLASH        &kp COLON      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT_SIGN  &mcr_arr_fn      &none
+&trans  &kp PERIOD  &kp N4  &kp N5  &kp N6              &kp N0           &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR   &kp EXCLAMATION  &trans
+&none   &kp EQUAL   &kp N7  &kp N8  &kp N9              &td_star_hash    &kp AMPERSAND  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PERCENT  &kp QUESTION     &none
+                            &trans  &mcr_dot_space_cyr  &trans           &trans         &mcr_comma_space_cyr  &trans
             >;
         };
+
+//         lower_layer {
+//             // -----------------------------------------------------------------------------------------
+//             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+//             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+//             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//             //                    | GUI |     | SPC |   | ENT |     | ALT |
+//
+//             bindings = <
+// &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+// &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+// &kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
+//                                         &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+//             >;
+//         };
 
         raise_layer {
             // -----------------------------------------------------------------------------------------
@@ -70,6 +104,16 @@
 &kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+            >;
+        };
+
+
+        media_func_layer {
+            bindings = <
+&none  &none  &kp F10  &kp F11  &kp F12              &none     &none       &none     &none &none  &none
+&none  &none  &kp F5   &kp F8   &td_next_prev_track  &kp F3    &none &none &none &none &none  &none
+&none  &none  &kp F24  &kp F1   &kp F2               &none     &none &none &nonen &none &none  &none
+                       &trans   &trans               &none &none &none &none
             >;
         };
     };
