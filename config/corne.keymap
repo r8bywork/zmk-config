@@ -31,6 +31,27 @@
             bindings = <&kp AMPERSAND &kp SPACE &skl LEFT_SHIFT>;
             label = "MCR_DOT_SPACE";
         };
+
+        mcr_ctrl_c: ctrl_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp C>;
+            label = "CTRL_C";
+        };
+
+        mcr_ctrl_v: ctrl_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp V>;
+            label = "CTRL_V";
+        };
+
+        mcr_switch_language: switch_language {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp SPACE>;
+            label = "SWITCH_LANGUAGE";
+        };
     };
 
     combos {
@@ -59,6 +80,26 @@
         underscope {
             bindings = <&kp UNDERSCORE>;
             key-positions = <4 16>;
+        };
+
+        ctrl_c {
+            bindings = <&mcr_ctrl_c>;
+            key-positions = <16 17>;
+        };
+
+        ctrl_v {
+            bindings = <&mcr_ctrl_c>;
+            key-positions = <28 29>;
+        };
+
+        right_esc {
+            bindings = <&kp ESC>;
+            key-positions = <20 19>;
+        };
+
+        switch_language {
+            bindings = <&mcr_switch_language>;
+            key-positions = <38 39>;
         };
     };
 
