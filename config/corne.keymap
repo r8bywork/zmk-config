@@ -55,6 +55,11 @@
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <7 19>;
         };
+
+        underscope {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <4 16>;
+        };
     };
 
     behaviors {
