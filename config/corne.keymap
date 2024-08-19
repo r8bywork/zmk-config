@@ -82,24 +82,9 @@
             key-positions = <4 16>;
         };
 
-        ctrl_c {
-            bindings = <&mcr_ctrl_c>;
-            key-positions = <16 17>;
-        };
-
-        ctrl_v {
-            bindings = <&mcr_ctrl_v>;
-            key-positions = <28 29>;
-        };
-
         right_esc {
             bindings = <&kp ESC>;
             key-positions = <20 19>;
-        };
-
-        switch_language {
-            bindings = <&mcr_switch_language>;
-            key-positions = <31 30>;
         };
     };
 
@@ -161,10 +146,10 @@
 
         media_func_layer {
             bindings = <
-&none  &none    &kp F10  &kp F11              &kp F12  &none    &none  &none           &none           &none            &none  &none
-&none  &kp F5   &kp F8   &td_next_prev_track  &kp F3   &none    &none  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &none  &none
-&none  &kp F24  &kp F1   &kp F2               &none    &none    &none  &none           &kp DOWN_ARROW  &none            &none  &trans
-                         &trans               &none    &none    &none  &none
+&none  &none    &kp F10  &kp F11              &kp F12  &none          &none  &none           &none           &none            &none  &none
+&none  &kp F5   &kp F8   &td_next_prev_track  &kp F3   &mcr_ctrl_v    &none  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &none  &none
+&none  &kp F24  &kp F1   &kp F2               &none    &mcr_ctrl_c    &none  &none           &kp DOWN_ARROW  &none            &none  &trans
+                         &trans               &none    &none          &none  &none
             >;
         };
     };
