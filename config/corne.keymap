@@ -45,6 +45,16 @@
             bindings = <&soft_off>;
             key-positions = <36 25>;
         };
+
+        single_quote_combo {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <6 18>;
+        };
+
+        double_quotes_combo {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <7 19>;
+        };
     };
 
     behaviors {
