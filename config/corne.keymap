@@ -135,6 +135,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <5 17>;
         };
+
+        tilda_grave {
+            bindings = <&td_tilda_grave>;
+            key-positions = <1 13>;
+        };
     };
 
     behaviors {
@@ -170,6 +175,13 @@
             label = "TD_QUOTES";
             #binding-cells = <0>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+        };
+
+        td_tilda_grave: td_tilda_grave {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TILDA_GRAVE";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp TILDE>;
         };
     };
 
