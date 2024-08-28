@@ -66,6 +66,13 @@
             bindings = <&kp LG(A)>;
             label = "MCR_CTRL_A";
         };
+
+        mcr_fullsize_window: mcr_fullsize_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LC(F))>;
+            label = "MCR_FULLSIZE_WINDOW";
+        };
     };
 
     combos {
@@ -221,10 +228,10 @@
 
         func_layer {
             bindings = <
-&none  &none  &none  &none   &none  &none    &none  &none           &kp UP_ARROW    &none            &none  &none
-&none  &none  &none  &none   &none  &none    &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
-&none  &none  &none  &none   &none  &none    &none  &none           &none           &none            &none  &trans
-                     &trans  &none  &none    &none  &none
+&none  &kp F1  &kp F2  &kp F7  &kp F8                &kp F9    &none  &none           &kp UP_ARROW    &none            &none  &none
+&none  &none   &none   &none   &mcr_fullsize_window  &none     &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
+&none  &none   &none   &none   &none                 &none     &none  &none           &none           &none            &none  &trans
+                       &trans  &none                 &none     &none  &none
             >;
         };
     };
