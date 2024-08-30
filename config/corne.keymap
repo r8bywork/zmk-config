@@ -94,6 +94,20 @@
             bindings = <&kp LC(UP_ARROW)>;
             label = "MCR_VIEW_ALL_WINDOWS";
         };
+
+        mcr_screenshot: mcr_screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(NUMBER_4))>;
+            label = "MCR_SCREENSHOT";
+        };
+
+        mcr_video: mcr_video {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(N5))>;
+            label = "MCR_VIDEO";
+        };
     };
 
     combos {
@@ -160,7 +174,7 @@
         };
 
         eaqual {
-            bindings = <&kp EQUAL>;
+            bindings = <&td_equal__>;
             key-positions = <5 17>;
         };
 
@@ -218,6 +232,13 @@
             #binding-cells = <0>;
             bindings = <&kp PLUS>, <&kp MINUS>;
         };
+
+        td_equal__: td_equal__ {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EQUAL__";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp UNDERSCORE>;
+        };
     };
 
     keymap {
@@ -240,19 +261,19 @@
 
         num_char_layer {
             bindings = <
-&none   &none  &kp N1           &kp N2       &kp N3          &kp NUMBER_4     &kp N5         &kp NUMBER_6    &kp N7  &kp N8       &mcr_arr_fn  &none
-&trans  &none  &kp EXCLAMATION  &kp AT_SIGN  &kp UNDERSCORE  &kp N0           &kp N9         &td_plus_minus  &none   &kp DOLLAR   &none        &trans
-&none   &none  &none            &none        &none           &td_star_hash    &kp AMPERSAND  &none           &none   &kp PERCENT  &none        &none
-                                &trans       &none           &trans           &trans         &none           &trans
+&none   &kp NUMBER_1  &kp NUMBER_2     &kp N3       &kp NUMBER_4    &kp N5           &kp N6         &kp N7          &kp N8  &kp N9       &kp N0       &none
+&trans  &none         &kp EXCLAMATION  &kp AT_SIGN  &kp UNDERSCORE  &none            &none          &td_plus_minus  &none   &kp DOLLAR   &mcr_arr_fn  &trans
+&none   &none         &none            &none        &none           &td_star_hash    &kp AMPERSAND  &none           &none   &kp PERCENT  &none        &none
+                                       &trans       &none           &trans           &trans         &none           &trans
             >;
         };
 
         func_layer {
             bindings = <
-&none  &kp F1  &kp F2  &kp F7  &kp F8                &kp F9    &none  &none                  &kp UP_ARROW             &none                     &none  &none
-&none  &none   &none   &none   &mcr_fullsize_window  &none     &none  &kp LEFT_ARROW         &kp DOWN_ARROW           &kp RIGHT_ARROW           &none  &none
-&none  &none   &none   &none   &none                 &none     &none  &mcr_view_all_windows  &mcr_switch_window_left  &mcr_switch_window_right  &none  &trans
-                       &trans  &none                 &none     &none  &none
+&none  &kp F1   &kp F2   &kp F7   &kp F8                &kp F9    &none  &none                  &kp UP_ARROW             &none                     &mcr_screenshot  &none
+&none  &kp F10  &kp F11  &kp F12  &mcr_fullsize_window  &none     &none  &kp LEFT_ARROW         &kp DOWN_ARROW           &kp RIGHT_ARROW           &mcr_video       &none
+&none  &none    &none    &none    &none                 &none     &none  &mcr_view_all_windows  &mcr_switch_window_left  &mcr_switch_window_right  &none            &trans
+                         &trans   &none                 &none     &none  &none
             >;
         };
     };
