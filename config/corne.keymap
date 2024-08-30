@@ -98,14 +98,14 @@
         mcr_screenshot: mcr_screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LG(NUMBER_4))>;
+            bindings = <&kp LG(LS(NUMBER_4))>;
             label = "MCR_SCREENSHOT";
         };
 
         mcr_video: mcr_video {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LG(N5))>;
+            bindings = <&kp LG(LS(N5))>;
             label = "MCR_VIDEO";
         };
     };
