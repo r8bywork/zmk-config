@@ -260,9 +260,9 @@
 
         num_char_layer {
             bindings = <
-&none   &kp NUMBER_1  &kp NUMBER_2  &kp N3  &kp NUMBER_4  &kp N5    &kp N6  &kp N7          &kp N8  &kp N9  &kp N0          &none
-&trans  &none         &none         &none   &none         &none     &none   &td_plus_minus  &none   &none   &mcr_arr_fn     &trans
-&none   &none         &none         &none   &none         &none     &none   &none           &trans  &trans  &arr_func_rust  &none
+&none   &kp NUMBER_1  &kp NUMBER_2  &kp N3  &kp NUMBER_4  &kp N5    &kp N6  &kp N7          &kp N8  &kp N9         &kp N0          &none
+&trans  &none         &none         &none   &none         &none     &none   &td_plus_minus  &none   &kp BACKSLASH  &mcr_arr_fn     &trans
+&none   &none         &none         &none   &none         &none     &none   &none           &trans  &trans         &arr_func_rust  &none
                                     &trans  &none         &trans    &trans  &kp LEFT_SHIFT  &trans
             >;
         };
