@@ -108,6 +108,13 @@
             bindings = <&kp LG(LS(N5))>;
             label = "MCR_VIDEO";
         };
+
+        arr_func_rust: arr_func_rust {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT &kp SPACE>;
+            label = "ARR_FUNC_RUST";
+        };
     };
 
     combos {
@@ -185,14 +192,6 @@
     };
 
     behaviors {
-        td_next_prev_track: td_next_prev_track {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_NEXT_PREV_TRACK";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&kp F9>, <&kp F7>;
-        };
-
         td_star_hash: td_star_hash {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_STAR_HASH";
@@ -261,9 +260,9 @@
 
         num_char_layer {
             bindings = <
-&none   &kp NUMBER_1  &kp NUMBER_2     &kp N3       &kp NUMBER_4    &kp N5           &kp N6         &kp N7          &kp N8  &kp N9       &kp N0       &none
-&trans  &none         &kp EXCLAMATION  &kp AT_SIGN  &kp UNDERSCORE  &none            &none          &td_plus_minus  &none   &kp DOLLAR   &mcr_arr_fn  &trans
-&none   &none         &none            &none        &none           &td_star_hash    &kp AMPERSAND  &none           &none   &kp PERCENT  &none        &none
+&none   &kp NUMBER_1  &kp NUMBER_2     &kp N3       &kp NUMBER_4    &kp N5           &kp N6         &kp N7          &kp N8  &kp N9       &kp N0          &none
+&trans  &none         &kp EXCLAMATION  &kp AT_SIGN  &kp UNDERSCORE  &none            &none          &td_plus_minus  &none   &kp DOLLAR   &mcr_arr_fn     &trans
+&none   &none         &none            &none        &none           &td_star_hash    &kp AMPERSAND  &none           &none   &kp PERCENT  &arr_func_rust  &none
                                        &trans       &none           &trans           &trans         &none           &trans
             >;
         };
