@@ -269,10 +269,10 @@
 
         func_layer {
             bindings = <
-&none  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none                 &none      &none  &none                  &kp UP_ARROW             &none                     &mcr_screenshot  &none
-&none  &kp C_PREV  &kp C_PP              &kp C_NEXT            &mcr_fullsize_window  &kp F12    &none  &kp LEFT_ARROW         &kp DOWN_ARROW           &kp RIGHT_ARROW           &mcr_video       &none
-&none  &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &none                 &none      &none  &mcr_view_all_windows  &mcr_switch_window_left  &mcr_switch_window_right  &none            &trans
-                                         &none                 &none                 &none      &none  &none
+&none  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none  &none      &none           &none                  &none                    &none                     &mcr_screenshot  &none
+&none  &kp C_PREV  &kp C_PP              &kp C_NEXT            &none  &kp F12    &kp LEFT_ARROW  &kp DOWN               &kp UP_ARROW             &kp RIGHT_ARROW           &mcr_video       &none
+&none  &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &none  &none      &none           &mcr_view_all_windows  &mcr_switch_window_left  &mcr_switch_window_right  &none            &trans
+                                         &none                 &none  &none      &none           &none
             >;
         };
     };
