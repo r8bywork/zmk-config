@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 &soft_off { hold-time-ms = <200>; };
@@ -188,6 +189,11 @@
         tilda_grave {
             bindings = <&td_tilda_grave>;
             key-positions = <1 13>;
+        };
+
+        ble_reset {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <1 36>;
         };
     };
 
