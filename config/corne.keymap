@@ -198,6 +198,17 @@
     };
 
     behaviors {
+        hrm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <225>;
+            quick-tap-ms = <195>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+
         td_star_hash: td_star_hash {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_STAR_HASH";
